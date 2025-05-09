@@ -1,0 +1,25 @@
+{
+  "name": "insta",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@solana/web3.js": "^1.91.0",
+    "axios": "^1.9.0",
+    "bottleneck": "^2.19.5",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "instagram-private-api": "^1.45.0",
+    "puppeteer": "^20.9.0",
+    "socket.io": "^4.6.1"
+  }
+}
