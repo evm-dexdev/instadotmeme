@@ -15,7 +15,7 @@ const {
 } = process.env;
 
 if (!IG_USERNAME || !IG_PASSWORD || !IG_USER_ID) {
-  console.error('❌ IG_USERNAME, IG_PASSWORD, and IG_USER_ID must be set in .env');
+  console.error('IG_USERNAME, IG_PASSWORD, and IG_USER_ID must be set in .env');
   process.exit(1);
 }
 
@@ -90,7 +90,7 @@ async function loginIg() {
 }
 
 
-export async function startInstagramMonitor(io) {
+export async function startInstagram(io) {
   const ig = await loginIg();
 
   
@@ -148,7 +148,8 @@ export async function startInstagramMonitor(io) {
           instagramPost: postUrl,
           timestamp: new Date().toISOString(),
           mintAddress: result.mintAddress,
-          imageData: `data:image/png;base64,${screenshot}`
+          imageData: `data:image/png;base64,${screenshot}`,
+          platform: 'Instagram'
         };
         
         try {
@@ -174,7 +175,7 @@ export async function startInstagramMonitor(io) {
         }
       }
     } catch (err) {
-      console.error(' Monitor loop error:', err.message || err);
+      console.error('Instagram loop error:', err.message || err);
     }
 
     
