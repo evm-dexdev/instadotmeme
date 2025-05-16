@@ -16,9 +16,9 @@ const mentionPattern = /@insta\.meme\s*\+\s*([^\/\s]+)\/([^\/\s]+)/i;
  * 
  * @param {import("socket.io").Server} io
  */
-export function startTikTokScraper(io) {
+export function startTikTok(io) {
   async function scrapeAndProcess() {
-    console.log(`[${new Date().toISOString()}] Running TikTok scrape…`);
+    console.log(`[${new Date().toISOString()}] Running TikTok`);
     try {
       const run = await client
         .actor('clockworks/tiktok-sound-scraper')
@@ -40,7 +40,7 @@ export function startTikTokScraper(io) {
 
       const matches = items.filter(item => mentionPattern.test(item.text));
       if (!matches.length) {
-        console.log('→ No new matching captions this round.');
+        console.log('No new matching captions this round.');
         return;
       }
 
@@ -50,7 +50,7 @@ export function startTikTokScraper(io) {
         processedUrls.add(webVideoUrl);
 
         const [, name, ticker] = text.match(mentionPattern);
-        console.log(`→ Found new mention: ${name}/${ticker} @ ${webVideoUrl}`);
+        console.log(`Found new mention: ${name}/${ticker} @ ${webVideoUrl}`);
 
         let imageBuffer;
         try {
@@ -85,17 +85,18 @@ export function startTikTokScraper(io) {
           timestamp: new Date().toISOString(),
           mintAddress: result.mintAddress,
           imageData: `data:image/png;base64,${imageBuffer}`,
+          platform: 'TikTok'
         };
 
         
         const { imageData, ...logInfo } = tokenInfo;
-        console.log('→ Emitting newToken:', logInfo);
+        console.log('Emitting newToken:', logInfo);
 
         io.emit('newToken', tokenInfo);
       }
 
     } catch (err) {
-      console.error('Error during TikTok scrape:', err);
+      console.error('Error during TikTok:', err);
     }
   }
 
