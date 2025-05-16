@@ -74,7 +74,7 @@ npm start
 
 ### TikTok Monitoring
 - Uses Apify's TikTok scraper to monitor specific sounds
-- Monitors videos using the official sound: [@instadotmeme](https://www.tiktok.com/music/original-sound-instadotmeme-7502290236177763118)
+- Monitors videos using the [official sound](https://www.tiktok.com/music/original-sound-instadotmeme-7502290236177763118)
 - Processes mentions in the format `@instameme + [name]/[ticker]`
 - Captures video thumbnails for token creation
 - Only processes videos that use the official sound
