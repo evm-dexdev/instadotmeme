@@ -25,24 +25,19 @@ A real-time token creation and monitoring system that automatically creates Sola
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-# Solana Configuration
-SOLANA_RPC_URL=your_solana_rpc_url
-PUMP_PRIVATE_KEY=your_private_key
-
-# Instagram Configuration
-IG_USERNAME=your_instagram_username
-IG_PASSWORD=your_instagram_password
-IG_USER_ID=your_instagram_user_id
-POLL_INTERVAL=120  # in seconds
-
-# Apify Configuration (for TikTok)
-APIFY_TOKEN=your_apify_token
-
-# X (Twitter) Configuration
-TWITTER_API_KEY=your_twitter_api_key
-TWITTER_API_SECRET=your_twitter_api_secret
-TWITTER_ACCESS_TOKEN=your_twitter_access_token
-TWITTER_ACCESS_SECRET=your_twitter_access_secret
+IG_USERNAME=
+IG_PASSWORD=
+PUMP_PRIVATE_KEY=
+SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+IG_USER_ID=
+POLL_INTERVAL=
+PUMP_PROGRAM_ID=
+PORT=
+APIFY_TOKEN=
+OPENAI_API_KEY=
+TWITTER_OAUTH2_REFRESH_TOKEN=
+TWITTER_CLIENT_SECRET=
+TWITTER_CLIENT_ID=
 ```
 
 ## Installation
