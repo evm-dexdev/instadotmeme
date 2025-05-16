@@ -1,3 +1,4 @@
+import { startAmberAgent } from '../agent/amber.js';
 import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
@@ -7,9 +8,9 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 
 
-import { startInstagramMonitor } from './instagram.js';
-import { startTikTokScraper }    from './tiktok.js';
 
+import { startTikTok }    from './tiktok.js';
+import { startInstagram } from './instagram.js';
 
 import { createToken } from './pumpfun.js';
 
@@ -117,20 +118,29 @@ app.get('/api/token-history', (req, res) => {
 
 
 try {
-  console.log('Starting Instagram monitor...');
-  startInstagramMonitor(io);
-  console.log('Instagram monitor started');
+  console.log('Starting Instagram...');
+  startInstagram(io);
+  console.log('Instagram started');
 } catch (err) {
-  console.error('Instagram monitor failed to start:', err);
+  console.error('Instagram failed to start:', err);
 }
 
 
 try {
-  console.log('Starting TikTok scraper...');
-  startTikTokScraper(io);
-  console.log('TikTok scraper started');
+  console.log('Starting TikTok...');
+  startTikTok(io);
+  console.log('TikTok started');
 } catch (err) {
-  console.error('TikTok scraper failed to start:', err);
+  console.error('TikTok failed to start:', err);
+}
+
+
+try {
+  console.log('Starting Amber agent...');
+  startAmberAgent(io);
+  console.log('Amber agent started');
+} catch (err) {
+  console.error('Amber agent failed to start:', err);
 }
 
 
