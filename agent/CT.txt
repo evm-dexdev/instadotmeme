@@ -1,0 +1,6 @@
+Enter a list of CT accounts here you want to train Amber on. Make sure not to include @ or '
+
+Example:
+
+blknoiz06
+truth_terminal
