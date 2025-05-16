@@ -49,7 +49,7 @@ TWITTER_ACCESS_SECRET=your_twitter_access_secret
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/pauly00n/instadotmeme/
 cd insta-meme
 ```
 
@@ -131,10 +131,6 @@ npm start
 4. Push to the branch
 5. Create a new Pull Request
 
-## License
-
-[Your License Here]
-
 ## Support
 
-For support, please [contact details or issue tracker information] 
+For support, please contact developers@insta.meme
