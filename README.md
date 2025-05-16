@@ -67,19 +67,19 @@ npm start
 
 ## How It Works
 
-### Instagram Monitoring
+### Launching Through Instagram
 - Monitors Instagram user tags for mentions in the format `@instadotmeme + [name]/[ticker]`
 - Automatically captures post images and creates tokens
 - Maintains session state for continuous monitoring
 
-### TikTok Monitoring
-- Uses Apify's TikTok scraper to monitor specific sounds
+### Launching Through Titkok
+- Uses Apify's to monitor the instadotmeme sound
 - Monitors videos using the [official sound](https://www.tiktok.com/music/original-sound-instadotmeme-7502290236177763118)
 - Processes mentions in the format `@instameme + [name]/[ticker]`
 - Captures video thumbnails for token creation
 - Only processes videos that use the official sound
 
-### X (Twitter) Monitoring
+### Launching Through X (Twitter)
 - Monitors Twitter mentions and replies
 - Processes mentions in the format `@amberdotmeme + [name]/[ticker]`
 - Captures tweet media for token creation
@@ -100,6 +100,7 @@ npm start
 - Features a witty and engaging personality that makes monitoring fun
 - Responds with humor and personality to token creation events
 - Provides entertaining commentary on token trends and market movements
+- Creates tokens
 - Maintains a consistent and friendly presence across all platforms
 
 ### Real-time Updates
